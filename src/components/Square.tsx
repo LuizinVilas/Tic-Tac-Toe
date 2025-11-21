@@ -9,27 +9,28 @@ interface SquareProps {
 }
 
 export default function Square(props: SquareProps) {
-    const [caracter, setCaracter] = useState('');
-    
-    let change: boolean = true; 
+    const [caracter, setCaracter] = useState<string>('');
+    const [change, setChange] = useState<boolean>(true);
 
     function changeCaracter(count: number, setCount: setterFunction) {
         if (count % 2 === 0) {
-            setCaracter('X');
+            if(change){
+                setCaracter('X');
+                setCount(count + 1); 
+            }   
         } else {
-            setCaracter('O');
+            if(change){
+               setCaracter('O'); 
+               setCount(count + 1); 
+            }  
         }
-        setCount(count + 1); 
-        change = false; 
+        setChange(false)
     }
 
     const btnStyle = caracter === 'X' ? 'X-marker' : 'O-marker';
     
     return (
-        <div 
-          className="btn-container" 
-          onClick={() => changeCaracter(props.count, props.setCount)} 
-        >
+        <div className="btn-container" onClick={() => changeCaracter(props.count, props.setCount)}>
             <h1 className={btnStyle}>{caracter}</h1>
         </div>
     );

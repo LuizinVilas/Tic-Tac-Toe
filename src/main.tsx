@@ -5,6 +5,6 @@ import Board from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Board />
+    <Board/>
   </StrictMode>,
 )
