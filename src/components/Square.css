@@ -1,0 +1,25 @@
+.btn-container{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 2px;
+    background-color: #0a0a0a;
+    font-size: 2rem;
+    transition: background-color 0.3s;
+}
+
+.btn-container:hover{
+    background-color: #1a1a1a;
+}
+
+.X-marker{
+    color: #00FF00;
+    text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00;
+}
+
+.O-marker{
+    color: #FFA500;
+    text-shadow: 0 0 10px #FFA500, 0 0 20px #FFA500;
+}
